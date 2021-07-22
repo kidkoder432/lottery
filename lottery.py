@@ -95,7 +95,7 @@ while True:
         (3, False): "You won $7.",
         (2, True): "You won $7.",
         (1, True): "You won $4.",
-        (0, True): "You won $4",
+        (0, True): "You won $4.",
     }
 
     print(
@@ -103,6 +103,10 @@ while True:
         {' '.join([str(x) for x in whiteBalls])}",
         colored(str(powerBall), "red"),
     )
+
+    print(f"You matched {correctWhiteBalls} white balls.")
+    m = 'matched' if powerBallMatch else 'didn\'t match'
+    print(f'You {m} the Powerball')
 
     if tuple([correctWhiteBalls, powerBallMatch]) not in prizes.keys():
         prize = "Sorry, you didn't win anything. Try again next time!"
